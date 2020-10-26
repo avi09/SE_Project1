@@ -6,19 +6,29 @@ python:
 install: 
   - pip install -r requirements.txt
   - python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')" 
+  - pip install -e
 
 script: 
   - pwd
   - python sentimental_analysis/realworld/functional_testing.py
+  - pytest
+  - flake8
+  - black --check --diff .
+  - pylint --exit-zero .
+install:
+  - npm install prettier
+script:
+  - prettier --check .
 
 notifications:
   email:
     recipients: 
-      - mvijaya2@ncsu.edu
-      - nkashya@ncsu.edu
-      - sbangal2@ncsu.edu
-      - nrpandes@ncsu.edu
-      - arames22@ncsu.edu
+      - mbachu@ncsu.edu
+      - mnagdev@ncsu.edu
+      - aagraw24@ncsu.edu
+      - ppathak@ncsu.edu
+      - tyeh3@ncsu.edu
     
     on_success: never
     on_failure: always
+    
