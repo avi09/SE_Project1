@@ -25,6 +25,7 @@ urlpatterns = [
     url('admin/', admin.site.urls),
     url(r'^$',realworld.views.analysis,name='analysis'),
     url(r'^input',realworld.views.input,name = 'input'),
+    url(r'^moviereviewanalysis',realworld.views.moviereviewanalysis,name = 'movie review analysis'),
     url(r'^productanalysis',realworld.views.productanalysis,name = 'product analysis'),
     url(r'^textanalysis',realworld.views.textanalysis,name = 'text analysis'),
 ]

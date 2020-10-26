@@ -62,25 +62,18 @@
   </div>
 </header>
 
-<main role="main">
 
-<div class="card-panel teal lighten-2">
-  <section class="jumbotron text-center">
-    <img class="container">
-      <h1 style = "color:black; font-family: Helvetica, cursive; font-size: 60px;">SENTIMENT ANALYSIS</h1>
-        <img src = {% static 'realworld/sentiment.png' %} height = 400 >
-        <!--<h4 style = "color:#be1100;font-family: Helvetica">Positive - Negative - Neutral</h4>-->
-      <p>
-        <a href="{% url 'movie review analysis' %}" class="btn btn-primary my-2">Movie Review Analysis</a>
-        <a href="{% url 'product analysis' %}" class="btn btn-primary my-2">Product Analysis</a>
-        <a href="{% url 'input' %}" class="btn btn-primary my-2">Document or Audio Analysis</a>
-        <a href="{% url 'text analysis' %}" class="btn btn-primary my-2">Text Analysis</a>
-    </div>
-  </section>
+<h1 style="margin: auto; text-align: center; font-family: Helvetica;">{{ note }}</h1>
+<form action = "{% url "movie review analysis" %}" method = "post">
+        {% csrf_token %}
+    
+    <div class="container" style="width: 100%;">
+        <label for = "movie">Movie URL</label>
+    <input class="form-control form-control-lg" id = "movie" type="text" name="movie">
+    
+    <button class="btn btn-primary btn-lg" style="display: flex; align-items: center; justify-content: center;" type ="submit">Submit</button>
 </div>
+</form>
 
-</main>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
 </html>

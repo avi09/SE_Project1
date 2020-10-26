@@ -145,12 +145,12 @@ def input(request):
 def productanalysis(request):
     if request.method=='POST':
         blogname = request.POST.get("blogname", "")
-        text_file = open("/Users/nischalkashyap/Downloads/Projects/CELT/SE_Project1/Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/ProductAnalysis.txt", "w")
+        text_file = open("/home/mnagdev/NCSU Courses/SE/Sentiment_Analysis/SE_Project1/Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/ProductAnalysis.txt", "w")
         text_file.write(blogname)
         text_file.close()
-        os.system('scrapy runspider /Users/nischalkashyap/Downloads/Projects/CELT/SE_Project1/Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/amazon_review.py -o reviews.json')
+        os.system('scrapy runspider /home/mnagdev/NCSU Courses/SE/Sentiment_Analysis/SE_Project1/Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/amazon_review.py -o reviews.json')
         final_comment = []
-        with open('/Users/nischalkashyap/Downloads/Projects/CELT/SE_Project1/sentimental_analysis/reviews.json') as json_file:
+        with open('/home/mnagdev/NCSU Courses/SE/Sentiment_Analysis/SE_Project1/sentimental_analysis/realworld/reviews.json') as json_file:
             data = json.load(json_file)
             for p in range(1,len(data)-1):
                 a = data[p]['comment']
@@ -179,6 +179,24 @@ def textanalysis(request):
     else:
         note = "Text to be analysed!"
         return render(request, 'realworld/textanalysis.html', {'note': note})
+
+def moviereviewanalysis(request):
+    if request.method == 'POST':
+        movie = request.POST.get("movie", "")
+        text_file = open("/home/mnagdev/NCSU Courses/SE/Sentiment_Analysis/SE_Project1/sentimental_analysis/movie_review_link.txt", "w")
+        text_file.write(movie)
+        text_file.close()
+        os.system('python3 movie_scrap.py')
+        review_file = open("movie_reviews.txt", "r")
+        final_comment = review_file.read().split('.')
+
+        # final_comment is a list of strings!
+        result, towords = detailed_analysis(final_comment)
+        print(result)
+        return render(request, 'realworld/sentiment_graph.html', {'sentiment': result, 'towords':towords})
+    else:
+        note = "Please Enter the movie review link for analysis"
+        return render(request, 'realworld/moviereviewanalysis.html', {'note': note})
 
 @register.filter(name='get_item')
 def get_item(dictionary, key):
