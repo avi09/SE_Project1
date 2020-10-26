@@ -110,7 +110,7 @@ def input(request):
         result = {}
         if extension_name == 'pdf':
             value = pdfparser(path)
-            result = detailed_analysis(value)
+            result, towords = detailed_analysis(value)
         elif extension_name == 'txt':
             text_file = open(path, 'r', encoding="utf-8")
             a = ""
@@ -120,7 +120,7 @@ def input(request):
                     for i in b:
                         a += " " + i
             final_comment = a.split('.')
-            result = detailed_analysis(final_comment)
+            result, towords = detailed_analysis(final_comment)
         elif extension_name=='wav':
             r = sr.Recognizer()
             with sr.AudioFile(path) as source:
@@ -132,7 +132,7 @@ def input(request):
                 result, towords = detailed_analysis(value)
         # Sentiment Analysis
         os.system('cd /Users/nischalkashyap/Downloads/Projects/CELT/SE_Project1/sentimental_analysis/media/ && rm -rf *')
-        return render(request, 'realworld/sentiment_graph.html', {'sentiment': result}, {'towords':towords})
+        return render(request, 'realworld/sentiment_graph.html', {'sentiment': result, 'towords':towords})
     else:
         note = "Please Enter the file you want to analyze"
         return render(request, 'realworld/home.html', {'note': note})
@@ -154,7 +154,7 @@ def productanalysis(request):
         #final_comment is a list of strings!
         result, towords = detailed_analysis(final_comment)
         print(result)
-        return render(request, 'realworld/sentiment_graph.html', {'sentiment': result}, {'towords':towords})
+        return render(request, 'realworld/sentiment_graph.html', {'sentiment': result, 'towords':towords})
 
     else:
         note = "Please Enter the product blog link for analysis"
