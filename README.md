@@ -47,8 +47,14 @@ Sentiment analysis is one of the fastest growing research areas in computer scie
 1. Run `pip install -r requirements.txt` followed by `python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"`
 2. Make sure you change the directory to <b>sentimental_analysis</b>
 3. Execute manage.py using the command `python3 manage.py test` at `/SE_Project1/sentimental_analaysis`. This runs the unit test functions in all test named files.
+Homepage UI:
+![Capture](home.png)
 
-![Capture](https://user-images.githubusercontent.com/65666095/93840913-00e09680-fc60-11ea-8ef6-428e1ad5b46e.PNG)
+The UI for text input is as shown below:
+![alt text](textpage.png)
+
+The UI for Result graphs is as shown below:
+![alt text](result.png)
 
 The UI for URL input is as shown below:
 ![Product](https://user-images.githubusercontent.com/65666095/93841969-405cb200-fc63-11ea-96a3-26be6a36a24d.png)
@@ -56,8 +62,7 @@ The UI for URL input is as shown below:
 The UI for file input is as shown below:
 ![File](https://user-images.githubusercontent.com/65666095/93841890-02f82480-fc63-11ea-94c9-c3226cb321bb.png)
 
-The UI for text input is as shown below:
-![alt text](textpage.png)
+
 
 ## FUTURE SCOPE
 
