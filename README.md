@@ -48,7 +48,7 @@ Sentiment analysis is one of the fastest growing research areas in computer scie
 2. Make sure you change the directory to <b>sentimental_analysis</b>
 3. Execute manage.py using the command `python3 manage.py test` at `/SE_Project1/sentimental_analaysis`. This runs the unit test functions in all test named files.  
 Homepage UI:  
-![Capture](home.png)
+![Capture](home1.png)
 
 The UI for text input is as shown below:
 ![alt text](textpage.png)
