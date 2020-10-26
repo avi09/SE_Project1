@@ -4,7 +4,7 @@
 
 ### YouTube Link: 
 
-[![Video](https://i9.ytimg.com/vi_webp/zvme9ARshD8/mqdefault.webp?sqp=CJTzs_sF&rs=AOn4CLBkjs-_C1oPtVtZgfWL2llzZA_dKw)](https://www.youtube.com/watch?v=zvme9ARshD8)
+[![Sentiment Analysis](http://i3.ytimg.com/vi/3YbNEt3dYtc/hqdefault.jpg)](https://www.youtube.com/watch?v=IQHcs3QPbOE&feature=youtu.be&ab_channel=MounikaBachu)
 
 [![DOI](https://zenodo.org/badge/295188611.svg)](https://zenodo.org/badge/latestdoi/295188611)
 
@@ -16,16 +16,26 @@
 
 Sentiment analysis is one of the fastest growing research areas in computer science, making it challenging to keep track of all the activities in the area. In our project we aim to achieve our goal in accurately predicting a users sentiment by analysing the data provided in any of the four different methods. They are Document Analysis, Text Analysis, Product Analysis and Audio Analysis. This project though currently in the initial stages of development, can be further applied to numerous domains which can be useful for the society. This document provides a major perspective for the users to understand and take up the project as an Open source software and add on multiple features before releasing to the market. Also, the document aids the developers in understanding the code and acts as a reference point for starting the project.
 
-The complete development was achieved using the following technologies and it is recommended that the next set of developers who take up this project have these technologies installed and keep them running before proceeding further:
-Python3
-Django
-HTML
-CSS
-Scrappy
-Vader Analysis Tool
+## Technologies and Tools
+<b>Language</b>: Python 3, HTML, CSS
 
-Although we have used HTML and CSS for the FrontEnd, the users can merge the backend logic with any of the front end frameworks they wish to use such as React, angularJS, etc.
+<b>Framework</b>: Scrappy (Web-crawling)
 
+<b>Tool</b>: Vader Analysis Tool
+
+<b>Web Application Framework</b>: Django (Model-template-views architectural pattern)
+
+<b>Test Framework</b>: pytest
+
+<b>Database</b>: SQLite
+
+<b>Tools</b>: Visual Studio Code
+
+<b>Syntax Checker & Sytle Checker</b>: pylint (VSCode Python v2020.8.109390 Extension)
+
+<b>Code Formatter</b>: autopep8 (VSCode Python-autopep8 v1.0.2)
+
+<b>Version Control</b>: git
 
 ## Steps for execution
 1. Run `pip install -r requirements.txt` followed by `python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"`
