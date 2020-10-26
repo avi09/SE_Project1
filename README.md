@@ -46,7 +46,7 @@ Sentiment analysis is one of the fastest growing research areas in computer scie
 ## Steps for testing
 1. Run `pip install -r requirements.txt` followed by `python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"`
 2. Make sure you change the directory to <b>sentimental_analysis</b>
-3. Execute manage.py using the command `python3 manage.py test` at `/SE_Project1/sentimental_analaysis`. This runs the unit test functions in all test named files.
+3. Execute manage.py using the command `python3 manage.py test` at `/SE_Project1/sentimental_analaysis`. This runs the unit test functions in all test named files.  
 Homepage UI:  
 ![Capture](home.png)
 
