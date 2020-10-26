@@ -70,12 +70,12 @@ Extend the analysis to the Facebook, Twitter and LinkedIn Posts
 
 ## Team Members
 
-Mangalnathan Vijayagopal (mvijaya2)
+Avi Agrawal (aagraw24)
 
-Nischal Badarinath Kashyap (nkashya)
+Ian Yeh (tyeh3)
 
-Amogh Rameshappa Devapura (arames22)
+Manvi Nagdev (mnagdev)
 
-Niranjan Pandeshwar (nrpandes)
+Pushpendra Pathak (ppathak)
 
-Sharath Bangalore Ramesh Kumar (sbangal2)
+Mounika Bachu (mbachu)
