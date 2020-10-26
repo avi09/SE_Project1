@@ -55,7 +55,7 @@ def get_clean_text(text):
     stop_words = set(stopwords.words('english'))
     stop_words.add('rt')
     stop_words.add('')
-    
+
     #Remove tokens which are in stop_words
     newtokens = [item for item in tokens if item not in stop_words]
 
@@ -80,13 +80,23 @@ def detailed_analysis(result):
         pos_count += sentiment['pos']
         neu_count += sentiment['neu']
         neg_count += sentiment['neg']
-    
+
+    towords = {}
+    for i in set(result):
+        i = get_clean_text(i)
+        for j in i.split(' '):
+            if not j in towords.keys():
+                towords[str(j)] = 1
+            else:
+                towords[str(j)] += 1
+    towords = {k: v for k,v in sorted(towords.items(), key = lambda x: x[1])}
+
     total = pos_count + neu_count + neg_count
     result_dict['pos'] = (pos_count/total)
     result_dict['neu'] = (neu_count/total)
     result_dict['neg'] = (neg_count/total)
-
-    return result_dict
+    print(towords)
+    return result_dict, towords
 
 def input(request):
     if request.method=='POST':
@@ -119,10 +129,10 @@ def input(request):
                 # recognize (convert from speech to text)
                 text = r.recognize_google(audio_data)
                 value = text.split('.')
-                result = detailed_analysis(value)
+                result, towords = detailed_analysis(value)
         # Sentiment Analysis
         os.system('cd /Users/nischalkashyap/Downloads/Projects/CELT/SE_Project1/sentimental_analysis/media/ && rm -rf *')
-        return render(request, 'realworld/sentiment_graph.html', {'sentiment': result})
+        return render(request, 'realworld/sentiment_graph.html', {'sentiment': result}, {'towords':towords})
     else:
         note = "Please Enter the file you want to analyze"
         return render(request, 'realworld/home.html', {'note': note})
@@ -142,9 +152,9 @@ def productanalysis(request):
                 final_comment.append(a)
 
         #final_comment is a list of strings!
-        result = detailed_analysis(final_comment)
+        result, towords = detailed_analysis(final_comment)
         print(result)
-        return render(request, 'realworld/sentiment_graph.html', {'sentiment': result})
+        return render(request, 'realworld/sentiment_graph.html', {'sentiment': result}, {'towords':towords})
 
     else:
         note = "Please Enter the product blog link for analysis"
@@ -158,9 +168,9 @@ def textanalysis(request):
         final_comment = text_data.split('.')
 
         # final_comment is a list of strings!
-        result = detailed_analysis(final_comment)
+        result, towords = detailed_analysis(final_comment)
         print(result)
-        return render(request, 'realworld/sentiment_graph.html', {'sentiment': result})
+        return render(request, 'realworld/sentiment_graph.html', {'sentiment': result, 'towords':towords})
     else:
         note = "Text to be analysed!"
         return render(request, 'realworld/textanalysis.html', {'note': note})

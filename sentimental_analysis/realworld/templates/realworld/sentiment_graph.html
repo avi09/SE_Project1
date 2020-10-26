@@ -4,10 +4,10 @@
 <script type="text/javascript">
 window.onload = function () {
     CanvasJS.addColorSet("piechartColors",
-                [//colorSet Array 
-                "#2F4F4F",   
+                [//colorSet Array
+                "#2F4F4F",
                 "#b5190b",
-                "#b39032"       
+                "#b39032"
                 ]);
 	var chart = new CanvasJS.Chart("chartContainer",
 	{
@@ -37,11 +37,51 @@ window.onload = function () {
 		]
 	});
 	chart.render();
+
+
+  var words = "{{towords|escapejs}}";
+  var js1 = JSON.parse(JSON.stringify(words.trim()));
+  js1 = js1.replaceAll("'",'"');
+  js1 = JSON.parse(js1);
+  var dt = [];
+  for (var x in js1)
+  {
+    dt.push({ y : js1[x], label : x});
+  }
+
+  var chart1 = new CanvasJS.Chart("chartContainer1", {
+	animationEnabled: true,
+
+	title:{
+		text:"Most Used words in review"
+	},
+	axisX:{
+		interval: 1.0
+	},
+	axisY2:{
+		interlacedColor: "white",
+		gridColor: "white",
+		title: "Word Frequency"
+	},
+	data: [{
+		type: "bar",
+		name: "Word Frequency",
+		axisYType: "secondary",
+		color: "rgba(51,105,82,1)",
+		dataPoints: dt
+	}]
+});
+  chart1.render();
 }
 </script>
 <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
 <body style="background-color: gray;">
 <div id="chartContainer" style="height: 600px; width: 70%; margin-left: auto; margin-right: auto; background-color: gray;"></div>
+<br><br>
+<div id="chartContainer1" style="height: 600px; width: 70%; margin-left: auto; margin-right: auto; background-color: gray;"></div>
+<script>
+
+</script>
 </body>
 </html>
