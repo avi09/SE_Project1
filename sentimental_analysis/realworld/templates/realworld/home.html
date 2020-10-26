@@ -63,9 +63,13 @@
 </header>
 
 <h1 style="margin: auto; text-align: center; font-family: Helvetica;">{{ note }}</h1>
+<p><center>
+  Please choose text/pdf/audio wav file -
+</center>
+</p>
 <form action = "{% url "input" %}" method = "post" enctype="multipart/form-data">
         {% csrf_token %}
-    
+
         <div class="container">
     <input class="form-control form-control-lg" type="file" name="document">
     <br>
