@@ -11,6 +11,7 @@ from .utilityFunctions import *
 import os
 import json
 import speech_recognition as sr
+from nltk.stem import PorterStemmer
 
 def pdfparser(data):
 
@@ -84,11 +85,15 @@ def detailed_analysis(result):
     towords = {}
     for i in set(result):
         i = get_clean_text(i)
+        i = i.lower()
+        uwords = ['more','at','so','although','some','to','the','of','can','but','thi','kind','realli','thus','some','part','there','which','make','it','need']
         for j in i.split(' '):
-            if not j in towords.keys():
-                towords[str(j)] = 1
-            else:
-                towords[str(j)] += 1
+            j = PorterStemmer().stem(j)
+            if not j in uwords:
+                if not j in towords.keys():
+                    towords[str(j)] = 1
+                else:
+                    towords[str(j)] += 1
     towords = {k: v for k,v in sorted(towords.items(), key = lambda x: x[1])}
 
     total = pos_count + neu_count + neg_count
