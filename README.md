@@ -57,7 +57,7 @@ The UI for file input is as shown below:
 ![File](https://user-images.githubusercontent.com/65666095/93841890-02f82480-fc63-11ea-94c9-c3226cb321bb.png)
 
 The UI for text input is as shown below:
-![Text](https://user-images.githubusercontent.com/65666095/93841936-24f1a700-fc63-11ea-9b07-8e685e4ebbf1.png)
+![Text](./testpage.png)
 
 ## FUTURE SCOPE
 
