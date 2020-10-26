@@ -22,12 +22,16 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    url('admin/', admin.site.urls),
-    url(r'^$',realworld.views.analysis,name='analysis'),
-    url(r'^input',realworld.views.input,name = 'input'),
-    url(r'^moviereviewanalysis',realworld.views.moviereviewanalysis,name = 'movie review analysis'),
-    url(r'^productanalysis',realworld.views.productanalysis,name = 'product analysis'),
-    url(r'^textanalysis',realworld.views.textanalysis,name = 'text analysis'),
+    url("admin/", admin.site.urls),
+    url(r"^$", realworld.views.analysis, name="analysis"),
+    url(r"^input", realworld.views.input, name="input"),
+    url(
+        r"^moviereviewanalysis",
+        realworld.views.moviereviewanalysis,
+        name="movie review analysis",
+    ),
+    url(r"^productanalysis", realworld.views.productanalysis, name="product analysis"),
+    url(r"^textanalysis", realworld.views.textanalysis, name="text analysis"),
 ]
 
-urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
