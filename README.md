@@ -37,12 +37,27 @@ Sentiment analysis is one of the fastest growing research areas in computer scie
 
 <b>Version Control</b>: git
 
+<b>Automated Analysis Tool</b>: Husky git hooks and Vulture
+
+Husky Git hooks: Used to prevent bad commits or push 
+
+https://medium.com/@krishankantsinghal/husky-and-git-hooks-to-make-sure-your-code-is-clean-formatted-and-no-eslint-error-d34a4958b842
+
+Vulture: Find dead code
+
+https://github.com/jendrikseipp/vulture
+
 ## Steps for execution
 1. Run `pip install -r requirements.txt` followed by `python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"`
 2. Make sure you change the directory to <b>sentimental_analysis</b>
 3. Execute manage.py using the command `python3 manage.py runserver` at `/SE_Project1/sentimental_analaysis`. This runs the Django server such that we can open the webUI for the project on the browser.
 4. Next, open your browser and type in `localhost:8000` in the search bar to open the webUI of the application.
 5. The UI typically looks as shown below and here you have a choice between URL, file or normal text input.
+## Using Docker
+1. navigate to the project directory with the Dockerfile
+2. docker build -t my-app .
+3. docker run -p 5000:5000 my-app
+4. open browser and enter http://localhost:5000/
 ## Steps for testing
 1. Run `pip install -r requirements.txt` followed by `python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"`
 2. Make sure you change the directory to <b>sentimental_analysis</b>
