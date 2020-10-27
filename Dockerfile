@@ -8,6 +8,8 @@ WORKDIR /my-django-app
 
 RUN pip install -r requirements.txt
 
+RUN python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
+
 RUN python3 ./sentimental_analysis/manage.py migrate
 
 CMD python3 ./sentimental_analysis/manage.py runserver 0.0.0.0:5000
