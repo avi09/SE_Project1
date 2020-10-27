@@ -35,8 +35,8 @@
 || Extensive use of syntax checkers. |4|
 || Use of code coverage |4|
 || Extensive use of code coverage |4|
-|| other automated analysis tools|2|
-|| Extensive use of  other automated analysis tools|2|
+|| other automated analysis tools|4|
+|| Extensive use of  other automated analysis tools|4|
 || test cases exist|4|
 || test cases are routinely executed|4|
 | consensus-oriented model| the files CONTRIBUTING.md and CODEOFCONDUCT.md has have multiple edits by multiple people|4|
