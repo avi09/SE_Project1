@@ -87,6 +87,8 @@ This code of conduct and its related procedures also applies to unacceptable beh
 
 ## 11. Contact info
 
+mbachu@ncsu.edu
+
 
 
 ## 12. License and attribution
