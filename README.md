@@ -40,9 +40,11 @@ Sentiment analysis is one of the fastest growing research areas in computer scie
 <b>Automated Analysis Tool</b>: Husky git hooks and Vulture
 
 Husky Git hooks: Used to prevent bad commits or push 
+
 https://medium.com/@krishankantsinghal/husky-and-git-hooks-to-make-sure-your-code-is-clean-formatted-and-no-eslint-error-d34a4958b842
 
 Vulture: Find dead code
+
 https://github.com/jendrikseipp/vulture
 
 ## Steps for execution
