@@ -1,3 +1,6 @@
+By contributing to this project, you accept and agree to the terms and conditions for present and future Contributions submitted to this project. By contributing you agree that these contributions are your own (or approved by your employer) and you grant a full, complete, irrevocable copyright license to all users and developers of the project, present and future, pursuant to the license of the project. When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change. Please note we have a code of conduct, please follow it in all your interactions with the project.
+
+
 # Contributing to SENG20-G19 SE_Project1
 
 Follow the set of guidelines below to contribute to SENG20-G19 SE_Project1!
